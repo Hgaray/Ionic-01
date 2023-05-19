@@ -1,0 +1,29 @@
+<ion-list>
+
+  <ion-item-sliding *ngFor="let item of lista | filtrarLista:terminadas">
+
+    <ion-item-options side="start">
+      <ion-item-option color="success" (click)="Editar(item)">
+        <ion-icon slot="icon-only" name="archive"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
+
+    <ion-item color="dark" (click)="VerDetalle(item)">
+      <ion-label>
+        {{item.titulo}}
+      </ion-label>
+      <ion-note color="tertiary">{{item.items.length}} Items</ion-note>
+    </ion-item>
+
+   
+
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="Eliminar(item)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
+  </ion-item-sliding>
+
+</ion-list>
